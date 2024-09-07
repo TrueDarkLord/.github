@@ -1,0 +1,80 @@
+name: "🦟 Bug Report 🐛"
+description: "Create a report for an issue."
+labels: [ "bug" ]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If you have any large stack traces / errors, Please use https://mclo.gs/
+
+        Spark > https://spark.lucko.me/download (Already included if using Paper 1.21+)
+  - type: input
+    attributes:
+      label: Spark link
+      description: If there is any performance issue, create a spark profile and send the link.
+      placeholder: Output of /spark profiler --timeout 300
+    validations:
+      required: false
+  - type: input
+    id: plugin_version
+    attributes:
+      label: Plugin Version
+      description: Type /version plugin-name in-game
+    validations:
+      required: true
+  - type: input
+    id: server_version
+    attributes:
+      label: Server Version
+      description: What server version and build are you on?
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Server Platform
+      description: What server platform are you using? If using Spigot, I would suggest moving to PaperMC https://papermc.io as it is a high performance fork.
+      options:
+        - Bukkit
+        - Spigot
+        - Paper
+        - Purpur
+        - Folia
+        - Pufferfish
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: bug
+    attributes:
+      label: Describe the bug
+      description: What is the issue that you are facing?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Outcome.
+      description: What did you expect to happen?
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Can you reproduce the issue on a test server? What are the steps?
+      placeholder: |
+        1. Download the server jar from PaperMC.
+        2. Add the plugin... it works...
+        3. Add x other plugin.
+        4. Check console and see errors.
+    validations:
+      required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add any logs, images, videos or additional context here.
+    validations:
+      required: false
